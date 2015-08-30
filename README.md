@@ -26,7 +26,7 @@ Optional. Default is 'assets'. This is the path that you're mounting broccoli li
 
 - `include` *{Array}*
 
-Optional. If set, defines a set of [patterns](https://www.npmjs.com/package/minimatch) to match files against for tracking for inclusion. For example, if you're using a css-preprocessor, you should omit your input files from tracking to prevent their changes from forcing a reload. This allows for live reload to hot-swap styling without refreshing the page.
+Optional. If set, defines a set of [patterns](https://www.npmjs.com/package/minimatch) to match files against for tracking inclusion. This does not affect your build itself, and can be used to speed up tracking or to otherwise prevent changes from forcing reloads. For example, if you're using a css-preprocessor, you should omit your input files from tracking to prevent their changes from forcing reloads. This allows for live reload to hot-swap styling without refreshing the page, so long as the only tracked files that changed are CSS.
 
 ```
 if (~process.argv.indexOf('--broccoli')) {
@@ -34,7 +34,7 @@ if (~process.argv.indexOf('--broccoli')) {
     path: 'assets',
     include: [
       '**/*.js',
-      '**/*.css'
+      '**/*.css' // We don't want SCSS/LESS to accidentally trigger a reload
     ]
   }));
 } else {
@@ -45,14 +45,14 @@ if (~process.argv.indexOf('--broccoli')) {
 
 - `exclude` *{Array}*
 
-Optional. If set, defines a set of [patterns](https://www.npmjs.com/package/minimatch) to match files against for tracking for exclusion.
+Optional. If set, defines a set of [patterns](https://www.npmjs.com/package/minimatch) to match files against for tracking exclusion. This does not affect your build itself, and can be used to speed up tracking or to otherwise prevent changes from forcing reloads.
 
 ```
 if (~process.argv.indexOf('--broccoli')) {
   app.use('/assets', require('broccoli-live-reload')({
     path: 'assets',
     exclude: [
-      '**/*.swf',
+      '**/*.swf', // Larger files are slower to track. This wouldn't matter unless your HD performance is slow, and there are many large files
       '**/*.png',
       '**/*.jpg'
     ]
@@ -62,3 +62,7 @@ if (~process.argv.indexOf('--broccoli')) {
 }
 
 ```
+
+## Donations
+
+Care to show your appreciation? [Donations](https://gratipay.com/~Bajix/) are much appreciated!
