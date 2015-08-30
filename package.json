@@ -4,6 +4,7 @@
   "description": "Serve broccoli assets with watch rebuilding and live reload capabilities",
   "main": "index.js",
   "scripts": {
+    "install": "node ./link",
     "test": "./node_modules/.bin/mocha"
   },
   "repository": {
