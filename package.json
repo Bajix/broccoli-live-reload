@@ -1,6 +1,6 @@
 {
   "name": "broccoli-live-reload",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Serve broccoli assets with watch rebuilding and live reload capabilities",
   "main": "lib/middleware.js",
   "scripts": {
