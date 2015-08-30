@@ -2,7 +2,7 @@
   "name": "broccoli-live-reload",
   "version": "0.0.1",
   "description": "Serve broccoli assets with watch rebuilding and live reload capabilities",
-  "main": "index.js",
+  "main": "lib/middleware.js",
   "scripts": {
     "install": "node ./link",
     "test": "./node_modules/.bin/mocha"
@@ -23,11 +23,13 @@
   },
   "homepage": "https://github.com/Bajix/broccoli-live-reload#readme",
   "devDependencies": {
+    "broccoli": "^0.16.7",
     "chai": "^3.2.0",
     "mocha": "^2.2.5"
   },
   "dependencies": {
     "async": "^1.4.2",
-    "minimatch": "^2.0.10"
+    "minimatch": "^2.0.10",
+    "tiny-lr": "^0.1.6"
   }
 }
