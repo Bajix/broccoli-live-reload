@@ -1,0 +1,28 @@
+{
+  "name": "broccoli-live-reload",
+  "version": "0.0.1",
+  "description": "Serve broccoli assets with watch rebuilding and live reload capabilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bajix/broccoli-live-reload.git"
+  },
+  "keywords": [
+    "Broccoli",
+    "Live",
+    "Reload"
+  ],
+  "author": "Thomas Sieverding",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bajix/broccoli-live-reload/issues"
+  },
+  "homepage": "https://github.com/Bajix/broccoli-live-reload#readme",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5"
+  }
+}
