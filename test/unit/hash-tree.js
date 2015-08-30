@@ -15,6 +15,41 @@ describe('Hash Tree', function() {
     });
   });
 
+  it('includes paths', function( done ) {
+    HashTree(path.resolve(__dirname, '../'), {
+      include: [
+        '**/*.opts'
+      ]
+    }).computeHashes(function( err, nodes ) {
+      if (err) {
+        return done(err);
+      }
+
+      assert.deepEqual(nodes, {
+        'mocha.opts': '807f8a5b99ece3cb0352d14953fe260a',
+        unit: {}
+      });
+
+      done(err);
+    });
+  });
+
+  it('excludes paths', function( done ) {
+    HashTree(path.resolve(__dirname, '../'), {
+      exclude: [
+        '**/*.opts'
+      ]
+    }).computeHashes(function( err, nodes ) {
+      if (err) {
+        return done(err);
+      }
+
+      assert.notProperty(nodes, 'mocha.opts');
+
+      done(err);
+    });
+  });
+
   describe('File Diffs', function() {
     beforeEach(function( done ) {
       var hashTree = this.unitTree = new HashTree(path.resolve(__dirname, '../'));
