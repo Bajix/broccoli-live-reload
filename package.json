@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "async": "^1.4.2",
-    "minimatch": "^2.0.10",
-    "tiny-lr": "^0.1.6"
+    "minimatch": "^3.0.0",
+    "tiny-lr": "^0.2.1"
   }
 }
