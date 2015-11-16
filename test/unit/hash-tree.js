@@ -1,4 +1,4 @@
-var HashTree = require('hash-tree'),
+var HashTree = require('../../lib/hash-tree'),
   path = require('path');
 
 describe('Hash Tree', function() {
