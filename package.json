@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/Bajix/broccoli-live-reload#readme",
   "devDependencies": {
-    "broccoli": "^0.16.8",
+    "broccoli": "^0.16.9",
     "chai": "^3.4.1",
     "mocha": "^2.3.4"
   },
